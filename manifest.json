@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "AI Meeting assistant",
+    "version": "1.0",
+    "description": "Shows how to display the side panel only on google.com using the Side Panel API.",
+    "background": {
+        "service_worker": "service-worker.js"
+    },
+    "action": {
+        "default_title": "Click to open panel"
+    },
+    "side_panel": {
+        "default_path": "sidepanel.html"
+    },
+    "permissions": [
+        "sidePanel",
+        "tabs"
+    ],
+    "icons": {
+        "16": "images/icon-16.png",
+        "48": "images/icon-48.png",
+        "128": "images/icon-128.png"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/content.js"
+            ],
+            "matches": [
+                "https://meet.google.com/*"
+            ]
+        }
+    ]
+}
